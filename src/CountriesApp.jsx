@@ -5,14 +5,14 @@ import './assets/styles/CountriesApp.scss';
 import ThemeContext from './theme/ThemeContext';
 import { useTheme } from './hooks/useTheme';
 
-import Header from './components/Header';
+import CountriesPage from './containers/CountriesPage';
 
 export const CountriesApp = () => {
   const { themeState, setThemeState } = useTheme();
 
   return (
     <ThemeContext.Provider value={{ themeState, setThemeState }}>
-      <Header />
+      <CountriesPage />
     </ThemeContext.Provider>
   );
 };

@@ -1,0 +1,13 @@
+.select {
+  width: 150px;
+  padding: 3px;
+  border: none;
+  color: #6d6b6b;
+  box-shadow: 1px 1px 5px 2px #ece9e9;
+  border-radius: 10px;
+  outline: none;
+
+  @media screen and (min-width: 720px) {
+    justify-self: end;
+  }
+}
