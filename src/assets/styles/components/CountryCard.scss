@@ -1,0 +1,31 @@
+@import '../variables';
+
+.country-card {
+  box-shadow: 2px 2px 8px 0px #e6e6e6;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 auto 50px;
+  padding-bottom: 20px;
+  overflow: hidden;
+
+  @media screen and (min-width: 620px) {
+    max-width: 280px;
+  }
+
+  figure {
+    margin: 0;
+  }
+
+  &__details {
+    padding: 0 20px;
+  }
+
+  &__title {
+    font-size: 1.8rem;
+    margin: 10px 0 20px;
+  }
+
+  &__paragraph {
+    margin: 10px 0;
+  }
+}
