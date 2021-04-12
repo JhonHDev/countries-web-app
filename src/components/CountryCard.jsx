@@ -9,7 +9,10 @@ const CountryCard = ({ name, flag, population, region, capital }) => {
   };
 
   return (
-    <article onClick={handleCountry} className='country-card'>
+    <article
+      onClick={handleCountry}
+      className='country-card animate__animated animate__fadeIn'
+    >
       <figure>
         <img src={flag} alt={name} />
       </figure>
