@@ -1,14 +1,12 @@
 import React from 'react';
 
-import Header from '../components/Header';
 import MainContent from '../components/MainContent';
 import Options from '../components/Options';
 import CountriesList from '../components/CountriesList';
 
-const CountriesPage = () => {
+const Home = () => {
   return (
     <>
-      <Header />
       <MainContent>
         <Options />
         <CountriesList />
@@ -17,4 +15,4 @@ const CountriesPage = () => {
   );
 };
 
-export default CountriesPage;
+export default Home;
