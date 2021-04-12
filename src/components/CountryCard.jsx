@@ -3,9 +3,13 @@ import PropTypes from 'prop-types';
 
 import '../assets/styles/components/CountryCard.scss';
 
+import { useHistory } from 'react-router';
+
 const CountryCard = ({ name, flag, population, region, capital }) => {
+  const history = useHistory();
+
   const handleCountry = () => {
-    console.log('...');
+    history.push(`/country/${name}`);
   };
 
   return (

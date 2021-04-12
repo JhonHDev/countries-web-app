@@ -2,6 +2,7 @@
   "name": "rest-countries-spa",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://jhonesteban.github.io/Rest-Countries-SPA",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.10",
     "@testing-library/react": "^11.2.6",

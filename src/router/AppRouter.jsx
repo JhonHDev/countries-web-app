@@ -9,6 +9,7 @@ import {
 import Header from '../components/Header';
 
 import Home from '../containers/Home';
+import Country from '../containers/Country';
 
 const AppRouter = () => {
   return (
@@ -18,6 +19,7 @@ const AppRouter = () => {
       <div>
         <Switch>
           <Route exact path='/home' component={Home} />
+          <Route exact path='/country/:countryId' component={Country} />
           <Redirect to='/home' />
         </Switch>
       </div>
