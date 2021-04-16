@@ -1,0 +1,31 @@
+@import '../variables';
+
+.country {
+  padding-top: 40px;
+  height: 100vh;
+  background-color: $Very-Light-Gray;
+
+  .btn-back {
+    margin-bottom: 50px;
+    padding: 6px 30px;
+    border: none;
+    color: #625c5c;
+    background-color: $Very-Light-Gray;
+    box-shadow: 0 0 8px 4px #ccc;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    outline: none;
+
+    i {
+      font-weight: 900;
+      font-size: 1.8rem;
+    }
+
+    span {
+      margin-left: 10px;
+      font-size: 1.4rem;
+    }
+  }
+}

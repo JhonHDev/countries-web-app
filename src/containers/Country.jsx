@@ -1,21 +1,33 @@
 import React from 'react';
 
+import '../assets/styles/containers/Country.scss';
+
+import { useParams } from 'react-router';
+
+import { useFetchCountry } from '../hooks/useFetchCountry';
+
+import Loading from '../components/Loading';
 import SingleCountryCard from '../components/SingleCountryCard';
 
 const Country = ({ history }) => {
+  const { countryId } = useParams();
+  const { data: country, loading } = useFetchCountry(countryId);
+
   const handleCountry = () => {
-    history.goBack();
+    history.length <= 2 ? history.push('/home') : history.goBack();
   };
 
   return (
-    <div className='country'>
+    <div className='country animate__animated animate__fadeIn'>
       <div className='wrapper'>
-        <button onClick={handleCountry}>
+        <button onClick={handleCountry} className='btn-back'>
           <i className='fas fa-long-arrow-alt-left'></i>
           <span>Back</span>
         </button>
 
-        <SingleCountryCard />
+        <div className='country__container'>
+          {loading ? <Loading /> : <SingleCountryCard {...country} />}
+        </div>
       </div>
     </div>
   );
