@@ -1,21 +1,30 @@
 import React, { useContext } from 'react';
+import { useHistory } from 'react-router';
 
 import '../assets/styles/components/Header.scss';
 
 import ThemeContext from '../theme/ThemeContext';
 
 const Header = () => {
+  const history = useHistory();
+
   const { themeState, setThemeState } = useContext(ThemeContext);
 
   const handleTheme = () => {
     setThemeState(!themeState);
   };
 
+  const handleNavigation = () => {
+    history.push(`/home`);
+  };
+
   return (
     <header className={`header ${themeState ? 'dark' : ''}`}>
       <div className='wrapper'>
         <section className='header__container'>
-          <h3 className='header__title'>Where in the world?</h3>
+          <h3 onClick={handleNavigation} className='header__title'>
+            Where in the world?
+          </h3>
 
           <button onClick={handleTheme} className='header__btn'>
             <i className={`far ${themeState ? 'fa-sun' : 'fa-moon'}`}></i>

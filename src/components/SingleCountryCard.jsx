@@ -3,6 +3,10 @@ import PropTypes from 'prop-types';
 
 import '../assets/styles/components/SingleCountryCard.scss';
 
+import InfoOne from './InfoOne';
+import InfoTwo from './InfoTwo';
+import InfoThree from './InfoThree';
+
 const SingleCountryCard = ({
   name,
   flag,
@@ -26,58 +30,21 @@ const SingleCountryCard = ({
         <h3 className='details__title'>{name}</h3>
 
         <div className='details__grid'>
-          <div className='info-one'>
-            <p>
-              <strong>Native Name: </strong>
-              <span>{nativeName}</span>
-            </p>
+          <InfoOne
+            nativeName={nativeName}
+            population={population}
+            region={region}
+            subregion={subregion}
+            capital={capital}
+          />
 
-            <p>
-              <strong>Population: </strong>
-              <span>{population}</span>
-            </p>
+          <InfoTwo
+            topLevelDomain={topLevelDomain}
+            currencies={currencies}
+            languages={languages}
+          />
 
-            <p>
-              <strong>Region: </strong>
-              <span>{region}</span>
-            </p>
-
-            <p>
-              <strong>Sub Region: </strong>
-              <span>{subregion}</span>
-            </p>
-
-            <p>
-              <strong>Capital: </strong>
-              <span>{capital}</span>
-            </p>
-          </div>
-
-          <div className='info-two'>
-            <p>
-              <strong>Top Level Domain: </strong>
-              <span>{topLevelDomain}</span>
-            </p>
-
-            <p>
-              <strong>Currencies: </strong>
-              <span>{currencies[0].name}</span>
-            </p>
-
-            <p>
-              <strong>Languages: </strong>
-              <span>{languages.map((language) => `${language.name} `)}</span>
-            </p>
-          </div>
-
-          <div className='info-three'>
-            <strong>Border Countries: </strong>
-            <div className='border-grid'>
-              {borders.map((borde) => (
-                <span key={borde}> {borde} </span>
-              ))}
-            </div>
-          </div>
+          <InfoThree borders={borders} />
         </div>
       </div>
     </section>
