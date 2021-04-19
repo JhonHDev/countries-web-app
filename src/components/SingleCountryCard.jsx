@@ -6,6 +6,7 @@ import '../assets/styles/components/SingleCountryCard.scss';
 import InfoOne from './InfoOne';
 import InfoTwo from './InfoTwo';
 import InfoThree from './InfoThree';
+import NoBorderCountries from './NoBorderCountries';
 
 const SingleCountryCard = ({
   name,
@@ -44,7 +45,11 @@ const SingleCountryCard = ({
             languages={languages}
           />
 
-          <InfoThree borders={borders} />
+          {borders.length === 0 ? (
+            <NoBorderCountries />
+          ) : (
+            <InfoThree borders={borders} />
+          )}
         </div>
       </div>
     </section>
