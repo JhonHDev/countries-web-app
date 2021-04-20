@@ -2,10 +2,22 @@ import React from 'react';
 
 import '../assets/styles/components/Form.scss';
 
-const Form = () => {
+const Form = ({ searchValue, searchInputRef, handleIputSearch }) => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+
   return (
-    <form className='form'>
-      <input type='search' placeholder='Search for a country...' />
+    <form onSubmit={handleSubmit} className='form'>
+      <input
+        onChange={handleIputSearch}
+        type='search'
+        value={searchValue}
+        name='search'
+        ref={searchInputRef}
+        placeholder='Search for a country...'
+        autoComplete='off'
+      />
     </form>
   );
 };
