@@ -1,0 +1,18 @@
+.select-value {
+  text-align: center;
+  margin: 20px;
+  cursor: pointer;
+
+  &:hover {
+    strong {
+      box-shadow: 1px 1px 6px rgb(129, 126, 126);
+    }
+  }
+
+  strong {
+    background-color: #ccc;
+    padding: 3px 12px;
+    border-radius: 7px;
+    box-shadow: 1px 1px 3px #ccc;
+  }
+}

@@ -8,15 +8,20 @@ import CountryCard from './CountryCard';
 import Loading from './Loading';
 import Options from './Options';
 import NoCountries from './NoCountries';
+import CurrentSelectValue from './CurrentSelectValue';
 
 const CountriesList = () => {
-  const { filteredCountries, loading, searchValue } = useContext(
+  const { filteredCountries, loading, selectValue, searchValue } = useContext(
     CountriesContext
   );
 
   return (
     <>
       <Options />
+
+      {selectValue && selectValue !== 'Filter by Region' && (
+        <CurrentSelectValue selectValue={selectValue} />
+      )}
 
       <section className='countries-list animate__animated animate__fadeIn'>
         {loading && <Loading />}
