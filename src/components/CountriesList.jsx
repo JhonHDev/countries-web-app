@@ -1,9 +1,8 @@
-import React, { useMemo } from 'react';
+import React, { useContext } from 'react';
 
 import '../assets/styles/components/CountriesList.scss';
 
-import { useFetchCountries } from '../hooks/useFetchCountries';
-import { useFormSearch } from '../hooks/useFormSearch';
+import CountriesContext from '../contexts/CountriesContext';
 
 import CountryCard from './CountryCard';
 import Loading from './Loading';
@@ -11,24 +10,13 @@ import Options from './Options';
 import NoCountries from './NoCountries';
 
 const CountriesList = () => {
-  const { data: countries, loading } = useFetchCountries();
-  const { searchValue, handleIputSearch, searchInputRef } = useFormSearch();
-
-  const filteredCountries = useMemo(
-    () =>
-      countries.filter((country) => {
-        return country.name.toLowerCase().includes(searchValue.toLowerCase());
-      }),
-    [countries, searchValue]
+  const { filteredCountries, loading, searchValue } = useContext(
+    CountriesContext
   );
 
   return (
     <>
-      <Options
-        searchValue={searchValue}
-        searchInputRef={searchInputRef}
-        handleIputSearch={handleIputSearch}
-      />
+      <Options />
 
       <section className='countries-list animate__animated animate__fadeIn'>
         {loading && <Loading />}

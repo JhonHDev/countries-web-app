@@ -6,7 +6,7 @@ const NoCountries = ({ searchValue }) => {
   return (
     <div className='no-countries animate__animated animate__fadeIn'>
       <p className='no-countries__text'>
-        No existen países con el término: <strong>{searchValue}</strong>
+        There are no countries with the term: <strong>{searchValue}</strong>
       </p>
     </div>
   );

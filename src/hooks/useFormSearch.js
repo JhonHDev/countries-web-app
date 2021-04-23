@@ -1,17 +1,30 @@
-import { useCallback, useRef, useState } from 'react';
+import { useContext } from 'react';
+import CountriesContext from '../contexts/CountriesContext';
 
 export const useFormSearch = () => {
-  const [searchValue, setSearchValue] = useState('');
-  const searchInputRef = useRef(null);
-
-  const handleIputSearch = useCallback((e) => {
-    e.preventDefault();
-    setSearchValue(searchInputRef.current.value);
-  }, []);
-
-  return {
+  const {
     searchValue,
-    handleIputSearch,
-    searchInputRef,
+    setSearchValue,
+    allCountries,
+    setFilteredCountries,
+  } = useContext(CountriesContext);
+
+  const handleInputSearch = ({ target }) => {
+    setSearchValue(target.value);
+
+    const query = target.value.toLowerCase();
+    !query && setFilteredCountries(allCountries);
+
+    const countriesByName = allCountries.filter((country) => {
+      return country.name.toLowerCase().includes(query);
+    });
+
+    setFilteredCountries(countriesByName);
   };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+
+  return [searchValue, handleInputSearch, handleSubmit];
 };

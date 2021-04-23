@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 
 import '../assets/styles/components/MainContent.scss';
 
-import ThemeContext from '../theme/ThemeContext';
+import ThemeContext from '../contexts/ThemeContext';
 
 const MainContent = ({ children }) => {
   const { themeState } = useContext(ThemeContext);

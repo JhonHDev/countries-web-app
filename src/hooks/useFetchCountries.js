@@ -3,19 +3,21 @@ import { useEffect, useState } from 'react';
 import { getAllCountries } from '../services/getAllCountries';
 
 export const useFetchCountries = () => {
-  const [state, setstate] = useState({
+  const [state, setState] = useState({
     data: [],
     loading: true,
   });
 
+  const { data, loading } = state;
+
   useEffect(() => {
     getAllCountries().then((countries) => {
-      setstate({
+      setState({
         data: countries,
         loading: false,
       });
     });
   }, []);
 
-  return state;
+  return [data, loading, setState];
 };

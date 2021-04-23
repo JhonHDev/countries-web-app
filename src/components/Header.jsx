@@ -3,7 +3,7 @@ import { useHistory } from 'react-router';
 
 import '../assets/styles/components/Header.scss';
 
-import ThemeContext from '../theme/ThemeContext';
+import ThemeContext from '../contexts/ThemeContext';
 
 const Header = () => {
   const history = useHistory();

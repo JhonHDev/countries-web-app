@@ -5,14 +5,10 @@ import '../assets/styles/components/Options.scss';
 import Form from './Form';
 import Select from './Select';
 
-const Options = ({ searchValue, searchInputRef, handleIputSearch }) => {
+const Options = () => {
   return (
     <section className='options'>
-      <Form
-        searchValue={searchValue}
-        searchInputRef={searchInputRef}
-        handleIputSearch={handleIputSearch}
-      />
+      <Form />
       <Select />
     </section>
   );
