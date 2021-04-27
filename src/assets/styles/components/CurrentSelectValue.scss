@@ -1,7 +1,17 @@
+@import '../variables';
+
 .select-value {
   text-align: center;
   margin: 20px;
   cursor: pointer;
+
+  &.dark {
+    strong {
+      background-color: #2b3945;
+      box-shadow: 1px 1px 3px #20272a52;
+      color: $Very-Light-Gray;
+    }
+  }
 
   &:hover {
     strong {

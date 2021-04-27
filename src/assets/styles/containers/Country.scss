@@ -2,8 +2,39 @@
 
 .country {
   padding-top: 40px;
-  height: 100vh;
   background-color: $Very-Light-Gray;
+  min-height: 100vh;
+
+  &.dark {
+    background-color: #202c37;
+    color: white;
+
+    .btn-back {
+      background-color: #2b3945;
+      color: $Very-Light-Gray;
+      box-shadow: 1px 1px 3px 1px #20272a52;
+
+      &:hover {
+        background-color: $Very-Light-Gray;
+        color: #2b3945;
+        box-shadow: 1px 1px 3px 1px $Very-Light-Gray;
+      }
+    }
+
+    .single-country {
+      .border-grid {
+        span {
+          background-color: #2b3945;
+          color: $Very-Light-Gray;
+
+          &:hover {
+            background-color: $Very-Light-Gray;
+            color: #2b3945;
+          }
+        }
+      }
+    }
+  }
 
   .btn-back {
     margin-bottom: 50px;
@@ -11,7 +42,7 @@
     border: none;
     color: #625c5c;
     background-color: $Very-Light-Gray;
-    box-shadow: 0 0 8px 4px #ccc;
+    box-shadow: 1px 1px 3px 1px #ccc;
     border-radius: 5px;
     display: flex;
     align-items: center;

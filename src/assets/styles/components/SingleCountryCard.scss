@@ -1,3 +1,5 @@
+@import '../variables';
+
 .single-country {
   width: 100%;
 
@@ -60,7 +62,7 @@
           align-items: center;
 
           span {
-            border: 1px solid #ccc;
+            box-shadow: 0px 0px 1px 1px #8294a4;
             cursor: pointer;
             margin: 6px 4px;
             padding: 6px;

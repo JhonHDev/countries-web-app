@@ -4,6 +4,18 @@
   background-color: $White;
   box-shadow: 0 1px 4px 2px #ccc;
 
+  &.dark {
+    background-color: #2b3945;
+    color: $Very-Light-Gray;
+
+    .main-button {
+      i,
+      span {
+        color: $Very-Light-Gray;
+      }
+    }
+  }
+
   &__title {
     cursor: pointer;
   }
@@ -14,10 +26,12 @@
     justify-content: space-between;
   }
 
-  &__btn {
+  .main-button {
     width: 100px;
     height: 30px;
+    padding: 4px;
     border: none;
+    border-radius: 5px;
     background-color: transparent;
     display: flex;
     justify-content: space-between;

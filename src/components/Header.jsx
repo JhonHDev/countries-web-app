@@ -26,7 +26,7 @@ const Header = () => {
             Where in the world?
           </h3>
 
-          <button onClick={handleTheme} className='header__btn'>
+          <button onClick={handleTheme} className='main-button'>
             <i className={`far ${themeState ? 'fa-sun' : 'fa-moon'}`}></i>
             <span>Dark Mode</span>
           </button>

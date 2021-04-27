@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import '../assets/styles/containers/Country.scss';
+
+import ThemeContext from '../contexts/ThemeContext';
 
 import { useParams } from 'react-router';
 
@@ -10,6 +12,8 @@ import Loading from '../components/Loading';
 import SingleCountryCard from '../components/SingleCountryCard';
 
 const Country = ({ history }) => {
+  const { themeState } = useContext(ThemeContext);
+
   const { countryId } = useParams();
   const { data: country, loading } = useFetchCountry(countryId);
 
@@ -18,7 +22,11 @@ const Country = ({ history }) => {
   };
 
   return (
-    <div className='country animate__animated animate__fadeIn'>
+    <div
+      className={`country animate__animated animate__fadeIn ${
+        themeState ? 'dark' : ''
+      }`}
+    >
       <div className='wrapper'>
         <button onClick={handleCountry} className='btn-back'>
           <i className='fas fa-long-arrow-alt-left'></i>
