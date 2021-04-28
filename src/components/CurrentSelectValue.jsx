@@ -19,12 +19,17 @@ const CurrentSelectValue = ({ selectValue }) => {
 
   return (
     <div
-      onClick={handleSelectValue}
       className={`select-value animate__animated animate__fadeIn ${
         themeState ? 'dark' : ''
       }`}
     >
-      <strong title='Remove Filter'> Countries of {selectValue}</strong>
+      <strong>
+        <span className='text'>Countries of {selectValue}</span>
+
+        <span onClick={handleSelectValue} className='close-icon'>
+          <i className='fas fa-times'></i>
+        </span>
+      </strong>
     </div>
   );
 };

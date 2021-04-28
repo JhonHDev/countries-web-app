@@ -16,6 +16,7 @@ const Form = () => {
         placeholder='Search for a country...'
         autoComplete='off'
       />
+      <i className='fas fa-search search-icon'></i>
     </form>
   );
 };

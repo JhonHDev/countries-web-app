@@ -12,7 +12,7 @@ export const useFormSearch = () => {
   const handleInputSearch = ({ target }) => {
     setSearchValue(target.value);
 
-    const query = target.value.toLowerCase();
+    const query = target.value.toLowerCase().trim();
     !query && setFilteredCountries(allCountries);
 
     const countriesByName = allCountries.filter((country) => {

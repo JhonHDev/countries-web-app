@@ -1,17 +1,15 @@
 @import '../variables';
 
 .no-countries {
-  height: 40px;
-  background-color: #ca3434;
-  box-shadow: 1px 1px 5px #ca3434;
-  border-radius: 5px;
-  color: $Very-Light-Gray;
-  padding: 8px 10px;
-  text-align: center;
-
   &__text {
     margin: 0;
-    font-size: 1.7rem;
+    padding: 8px 10px;
+    border-radius: 5px;
+    background-color: #ca3434;
+    box-shadow: 1px 1px 5px #ca3434;
+    font-size: 1.5rem;
+    color: $Very-Light-Gray;
+    text-align: center;
 
     strong {
       color: $Very-Dark-Blue;
