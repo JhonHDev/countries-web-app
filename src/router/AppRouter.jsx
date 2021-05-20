@@ -6,10 +6,9 @@ import {
   Redirect,
 } from 'react-router-dom';
 
-import Header from '../components/Header';
-
-import Home from '../containers/Home';
-import Country from '../containers/Country';
+import Header from '../components/header/Header';
+import Home from '../containers/home/Home';
+import Country from '../containers/country/Country';
 
 const AppRouter = () => {
   return (

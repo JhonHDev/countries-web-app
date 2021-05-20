@@ -1,0 +1,30 @@
+@import '../../styles/variables.scss';
+
+.loading {
+  width: 100%;
+
+  .spinner {
+    width: 80px;
+    height: 80px;
+    margin: 50px auto 0;
+    border: 8px solid rgba(0, 0, 0, 0.877);
+    border-radius: 50%;
+    border-left-color: transparent;
+    animation: spin 1s linear infinite;
+
+    &.dark {
+      border: 8px solid $White;
+      border-left-color: rgba(204, 204, 204, 0.835);
+    }
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

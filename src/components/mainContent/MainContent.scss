@@ -1,0 +1,33 @@
+@import '../../styles/variables.scss';
+
+.main {
+  height: 100%;
+  background-color: $Very-Light-Gray;
+
+  &.dark {
+    background-color: #202c37;
+    color: white;
+
+    .form {
+      input[type='search'] {
+        background-color: #2b3945;
+        color: $Very-Light-Gray;
+        box-shadow: 1px 1px 5px 2px #20272a52;
+      }
+
+      ::placeholder {
+        color: $Very-Light-Gray;
+      }
+    }
+
+    .select {
+      background-color: #2b3945;
+      color: $Very-Light-Gray;
+      box-shadow: 1px 1px 5px 2px #20272a52;
+    }
+
+    .country-card {
+      box-shadow: 2px 2px 8px 0px #1115175e;
+    }
+  }
+}
