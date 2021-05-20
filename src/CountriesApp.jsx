@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './assets/styles/CountriesApp.scss';
+import './styles/CountriesApp.scss';
 
 import ThemeContext from './contexts/ThemeContext';
 import CountriesContext from './contexts/CountriesContext';
