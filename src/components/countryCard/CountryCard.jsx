@@ -48,7 +48,6 @@ CountryCard.propTypes = {
   flag: PropTypes.string.isRequired,
   population: PropTypes.number.isRequired,
   region: PropTypes.string.isRequired,
-  capital: PropTypes.string.isRequired,
 };
 
 export default CountryCard;

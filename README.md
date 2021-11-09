@@ -1,6 +1,6 @@
-# Frontend Mentor Challenge #7 🐱‍👤
+# Countries App 🐱‍👤
 
-Layout challenge number seven with Frontend Mentor platform, I will code the REST Countries API with color theme switcher
+Single Page Application created with the REST Countries API
 
 ## Desktop design
 
@@ -17,7 +17,7 @@ Layout challenge number seven with Frontend Mentor platform, I will code the RES
 1. Clone the repository
 
 ```
-git clone https://github.com/JhonEsteban/Rest-Countries-SPA.git
+git clone https://github.com/JhonEsteban/Countries-App.git
 ```
 
 2. Install the node modules
@@ -32,12 +32,6 @@ npm install
 npm start
 ```
 
-### Do you want to try a layout challenge?
-
-Enter here: [Frontend Mentor](https://www.frontendmentor.io/challenges 'Click here') 👈
-
 ### My social networks 👋🏼
 
-- [Linkedin](https://www.linkedin.com/in/jhon-esteban-herrera-zabala-6b960b196 'My Linkendin')
-
-- [Twitter](https://twitter.com/JhonDev_19 'My Twitter')
+- [Linkedin](https://www.linkedin.com/in/jhon-esteban-herrera/ 'My Linkendin')
