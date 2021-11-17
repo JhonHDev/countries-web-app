@@ -1,15 +1,14 @@
-import React, { useContext } from 'react';
-
-import ThemeContext from '../../contexts/ThemeContext';
+import React from 'react';
+import { useSelector } from 'react-redux';
 
 import './Loading.scss';
 
 const Loading = () => {
-  const { themeState } = useContext(ThemeContext);
+  const { darkMode } = useSelector((state) => state.theme);
 
   return (
     <section className='loading'>
-      <div className={`spinner ${themeState ? 'dark' : ''}`}></div>
+      <div className={`spinner ${darkMode ? 'dark' : ''}`}></div>
     </section>
   );
 };

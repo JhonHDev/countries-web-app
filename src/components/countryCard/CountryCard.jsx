@@ -1,11 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './CountryCard.scss';
-
 import { useHistory } from 'react-router';
 
-const CountryCard = ({ name, flag, population, region, capital }) => {
+import './CountryCard.scss';
+
+const CountryCard = ({
+  name,
+  flag,
+  population,
+  region,
+  capital = 'No Capital',
+}) => {
   const history = useHistory();
 
   const handleCountry = () => {
@@ -48,6 +54,7 @@ CountryCard.propTypes = {
   flag: PropTypes.string.isRequired,
   population: PropTypes.number.isRequired,
   region: PropTypes.string.isRequired,
+  capital: PropTypes.string,
 };
 
 export default CountryCard;

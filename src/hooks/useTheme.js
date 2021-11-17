@@ -1,18 +1,26 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import setAppTheme from '../actions/themeActions';
 
-const initialState = () => {
-  return JSON.parse(localStorage.getItem('themeState')) || false;
-};
+const useAppTheme = () => {
+  const dispatch = useDispatch();
+  const { darkMode } = useSelector((state) => state.theme);
 
-export const useTheme = () => {
-  const [themeState, setThemeState] = useState(initialState);
+  const handleToggleTheme = () => {
+    localStorage.setItem('theme', JSON.stringify(!darkMode));
+    dispatch(setAppTheme(!darkMode));
+  };
 
   useEffect(() => {
-    localStorage.setItem('themeState', JSON.stringify(themeState));
-  }, [themeState]);
+    if (localStorage.getItem('theme')) {
+      const state = JSON.parse(localStorage.getItem('theme'));
+      dispatch(setAppTheme(state));
+    }
+  }, [dispatch]);
 
   return {
-    themeState,
-    setThemeState,
+    handleToggleTheme,
   };
 };
+
+export default useAppTheme;

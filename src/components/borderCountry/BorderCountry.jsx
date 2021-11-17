@@ -1,18 +1,20 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { useHistory } from 'react-router';
 
-import { useFetchCountryName } from '../../hooks/useFetchCountryName';
-
-const BorderCountry = ({ code }) => {
+const BorderCountry = ({ name }) => {
   const history = useHistory();
-  const { name } = useFetchCountryName(code);
 
   const handleCountry = () => {
     history.push(`/country/${name}`);
   };
 
   return <span onClick={handleCountry}>{name}</span>;
+};
+
+BorderCountry.propTypes = {
+  name: PropTypes.string.isRequired,
 };
 
 export default BorderCountry;

@@ -10,6 +10,7 @@ Single Page Application created with the REST Countries API
 
 - [React](https://reactjs.org/ 'Click here')
 - [React Router](https://reactrouter.com/web/guides/quick-start 'Click here')
+- [Redux](https://es.redux.js.org/ 'Click here')
 - [Sass](https://sass-lang.com/ 'Click here')
 
 ## To run the project: 👇

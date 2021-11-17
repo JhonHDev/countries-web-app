@@ -1,33 +1,35 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { useHistory } from 'react-router';
+import { useDispatch, useSelector } from 'react-redux';
+
+import useAppTheme from '../../hooks/useTheme';
+import { removeSingleCountry } from '../../actions/countriesActions';
 
 import './Header.scss';
 
-import ThemeContext from '../../contexts/ThemeContext';
-
 const Header = () => {
   const history = useHistory();
+  const dispatch = useDispatch();
 
-  const { themeState, setThemeState } = useContext(ThemeContext);
+  const { handleToggleTheme } = useAppTheme();
 
-  const handleTheme = () => {
-    setThemeState(!themeState);
-  };
+  const { darkMode } = useSelector((state) => state.theme);
 
   const handleNavigation = () => {
     history.push(`/home`);
+    dispatch(removeSingleCountry());
   };
 
   return (
-    <header className={`header ${themeState ? 'dark' : ''}`}>
+    <header className={`header ${darkMode ? 'dark' : ''}`}>
       <div className='wrapper'>
         <section className='header__container'>
           <h3 onClick={handleNavigation} className='header__title'>
             Where in the world?
           </h3>
 
-          <button onClick={handleTheme} className='main-button'>
-            <i className={`far ${themeState ? 'fa-sun' : 'fa-moon'}`}></i>
+          <button onClick={handleToggleTheme} className='main-button'>
+            <i className={`far ${darkMode ? 'fa-sun' : 'fa-moon'}`}></i>
             <span>Dark Mode</span>
           </button>
         </section>

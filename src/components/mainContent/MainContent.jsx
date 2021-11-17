@@ -1,14 +1,13 @@
-import React, { useContext } from 'react';
+import React from 'react';
+import { useSelector } from 'react-redux';
 
 import './MainContent.scss';
 
-import ThemeContext from '../../contexts/ThemeContext';
-
 const MainContent = ({ children }) => {
-  const { themeState } = useContext(ThemeContext);
+  const { darkMode } = useSelector((state) => state.theme);
 
   return (
-    <main className={`main ${themeState ? 'dark' : ''}`}>
+    <main className={`main ${darkMode ? 'dark' : ''}`}>
       <div className='wrapper'>{children}</div>
     </main>
   );

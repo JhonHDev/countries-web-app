@@ -19,7 +19,7 @@ const SingleCountryCard = ({
   topLevelDomain,
   currencies,
   languages,
-  borders,
+  borders = [],
 }) => {
   return (
     <section className='single-country animate__animated animate__fadeIn'>
@@ -67,7 +67,6 @@ SingleCountryCard.propTypes = {
   topLevelDomain: PropTypes.array.isRequired,
   currencies: PropTypes.array.isRequired,
   languages: PropTypes.array.isRequired,
-  borders: PropTypes.array.isRequired,
 };
 
 export default SingleCountryCard;

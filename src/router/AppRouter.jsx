@@ -8,8 +8,8 @@ import {
 } from 'react-router-dom';
 
 import Header from '../components/header/Header';
-import Home from '../containers/home/Home';
-import Country from '../containers/country/Country';
+import Home from '../pages/home/Home';
+import Country from '../pages/country/Country';
 
 const AppRouter = () => {
   return (
@@ -17,13 +17,11 @@ const AppRouter = () => {
       <HashRouter>
         <Header />
 
-        <div>
-          <Switch>
-            <Route exact path='/home' component={Home} />
-            <Route exact path='/country/:countryId' component={Country} />
-            <Redirect to='/home' />
-          </Switch>
-        </div>
+        <Switch>
+          <Route exact path='/home' component={Home} />
+          <Route exact path='/country/:countryName' component={Country} />
+          <Redirect to='/home' />
+        </Switch>
       </HashRouter>
     </Router>
   );

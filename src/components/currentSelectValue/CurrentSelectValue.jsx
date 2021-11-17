@@ -1,36 +1,33 @@
-import React, { useContext } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+
+import { resetCountriesFilteredByRegion } from '../../actions/countriesActions';
 
 import './CurrentSelectValue.scss';
 
-import ThemeContext from '../../contexts/ThemeContext';
-import CountriesContext from '../../contexts/CountriesContext';
-
 const CurrentSelectValue = ({ selectValue }) => {
-  const { themeState } = useContext(ThemeContext);
+  const dispatch = useDispatch();
 
-  const { setSelectValue, allCountries, setFilteredCountries } =
-    useContext(CountriesContext);
-
-  const handleSelectValue = () => {
-    setSelectValue('');
-    setFilteredCountries(allCountries);
+  const resetSelectValue = () => {
+    dispatch(resetCountriesFilteredByRegion());
   };
 
   return (
-    <div
-      className={`select-value animate__animated animate__fadeIn ${
-        themeState ? 'dark' : ''
-      }`}
-    >
+    <div className={`select-value animate__animated animate__fadeIn`}>
       <strong>
         <span className='text'>Countries of {selectValue}</span>
 
-        <span onClick={handleSelectValue} className='close-icon'>
+        <span onClick={resetSelectValue} className='close-icon'>
           <i className='fas fa-times'></i>
         </span>
       </strong>
     </div>
   );
+};
+
+CurrentSelectValue.propTypes = {
+  selectValue: PropTypes.string.isRequired,
 };
 
 export default CurrentSelectValue;

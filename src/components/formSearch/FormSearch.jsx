@@ -1,17 +1,23 @@
 import React from 'react';
 
+import useForm from '../../hooks/useForm';
+
 import './FormSearch.scss';
 
-import { useFormSearch } from '../../hooks/useFormSearch';
+const initialState = {
+  searchValue: '',
+};
 
 const FormSearch = () => {
-  const [searchValue, handleInputSearch, handleSubmit] = useFormSearch();
+  const { formValues, handleInputChange, handleSubmit } = useForm(initialState);
+  const { searchValue } = formValues;
 
   return (
     <form onSubmit={handleSubmit} className='form'>
       <input
-        onChange={handleInputSearch}
+        onChange={handleInputChange}
         value={searchValue}
+        name='searchValue'
         type='search'
         placeholder='Search for a country...'
         autoComplete='off'
